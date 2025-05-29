@@ -113,12 +113,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ProjectReference Include="..\InvernaderoController\InvernaderoController.vcxproj">
+      <Project>{56d6a35a-d3e6-62fc-c805-43e60d01b956}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\InvernaderoModel\InvernaderoModel.vcxproj">
       <Project>{ae302862-bc23-4966-76c2-c23f8639f7f0}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="frmEditarCultivo.cpp" />
     <ClCompile Include="frmMantenimientoCultivo.cpp" />
+    <ClCompile Include="frmMantenimientoInvernadero.cpp" />
+    <ClCompile Include="frmNuevoCultivo.cpp" />
     <ClCompile Include="frmPrincipal.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -130,7 +136,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="frmEditarCultivo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmMantenimientoCultivo.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmMantenimientoInvernadero.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmNuevoCultivo.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmPrincipal.h">
@@ -138,8 +153,17 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmEditarCultivo.resx">
+      <DependentUpon>frmEditarCultivo.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoCultivo.resx">
       <DependentUpon>frmMantenimientoCultivo.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoInvernadero.resx">
+      <DependentUpon>frmMantenimientoInvernadero.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoCultivo.resx">
+      <DependentUpon>frmNuevoCultivo.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.h</DependentUpon>

@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InvernaderoModel", "Inverna
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InvernaderoView", "InvernaderoView\InvernaderoView.vcxproj", "{8E3F19F7-3E43-31B6-29B1-AFA3FDE3B818}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InvernaderoController", "InvernaderoController\InvernaderoController.vcxproj", "{56D6A35A-D3E6-62FC-C805-43E60D01B956}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{8E3F19F7-3E43-31B6-29B1-AFA3FDE3B818}.Release|x64.Build.0 = Release|x64
 		{8E3F19F7-3E43-31B6-29B1-AFA3FDE3B818}.Release|x86.ActiveCfg = Release|Win32
 		{8E3F19F7-3E43-31B6-29B1-AFA3FDE3B818}.Release|x86.Build.0 = Release|Win32
+		{56D6A35A-D3E6-62FC-C805-43E60D01B956}.Debug|x64.ActiveCfg = Debug|x64
+		{56D6A35A-D3E6-62FC-C805-43E60D01B956}.Debug|x64.Build.0 = Debug|x64
+		{56D6A35A-D3E6-62FC-C805-43E60D01B956}.Debug|x86.ActiveCfg = Debug|Win32
+		{56D6A35A-D3E6-62FC-C805-43E60D01B956}.Debug|x86.Build.0 = Debug|Win32
+		{56D6A35A-D3E6-62FC-C805-43E60D01B956}.Release|x64.ActiveCfg = Release|x64
+		{56D6A35A-D3E6-62FC-C805-43E60D01B956}.Release|x64.Build.0 = Release|x64
+		{56D6A35A-D3E6-62FC-C805-43E60D01B956}.Release|x86.ActiveCfg = Release|Win32
+		{56D6A35A-D3E6-62FC-C805-43E60D01B956}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

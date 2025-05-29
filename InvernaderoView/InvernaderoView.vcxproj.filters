@@ -21,7 +21,16 @@
     <ClCompile Include="frmPrincipal.cpp">
       <Filter>Archivos de encabezado</Filter>
     </ClCompile>
+    <ClCompile Include="frmMantenimientoInvernadero.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
     <ClCompile Include="frmMantenimientoCultivo.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="frmNuevoCultivo.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="frmEditarCultivo.cpp">
       <Filter>Archivos de encabezado</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +38,16 @@
     <ClInclude Include="frmPrincipal.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="frmMantenimientoInvernadero.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
     <ClInclude Include="frmMantenimientoCultivo.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="frmNuevoCultivo.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="frmEditarCultivo.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

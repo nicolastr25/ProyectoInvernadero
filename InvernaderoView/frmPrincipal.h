@@ -1,4 +1,7 @@
 #pragma once
+#include "frmMantenimientoInvernadero.h"
+#include "frmMantenimientoCultivo.h"
+
 
 namespace InvernaderoView {
 
@@ -35,9 +38,12 @@ namespace InvernaderoView {
 			}
 		}
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
-	protected:
-	private: System::Windows::Forms::ToolStripMenuItem^ mantenimientoToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ mantenimientosToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ invernaderoToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ cultivoToolStripMenuItem;
+	protected:
+
+
 
 	private:
 		/// <summary>
@@ -53,7 +59,8 @@ namespace InvernaderoView {
 		void InitializeComponent(void)
 		{
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->mantenimientoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mantenimientosToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->invernaderoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->cultivoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -61,10 +68,7 @@ namespace InvernaderoView {
 			// menuStrip1
 			// 
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->mantenimientoToolStripMenuItem,
-					this->cultivoToolStripMenuItem
-			});
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->mantenimientosToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
@@ -72,18 +76,29 @@ namespace InvernaderoView {
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// mantenimientoToolStripMenuItem
+			// mantenimientosToolStripMenuItem
 			// 
-			this->mantenimientoToolStripMenuItem->Name = L"mantenimientoToolStripMenuItem";
-			this->mantenimientoToolStripMenuItem->Size = System::Drawing::Size(82, 20);
-			this->mantenimientoToolStripMenuItem->Text = L"Invernadero";
-			this->mantenimientoToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::mantenimientoToolStripMenuItem_Click);
+			this->mantenimientosToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->invernaderoToolStripMenuItem,
+					this->cultivoToolStripMenuItem
+			});
+			this->mantenimientosToolStripMenuItem->Name = L"mantenimientosToolStripMenuItem";
+			this->mantenimientosToolStripMenuItem->Size = System::Drawing::Size(106, 20);
+			this->mantenimientosToolStripMenuItem->Text = L"Mantenimientos";
+			// 
+			// invernaderoToolStripMenuItem
+			// 
+			this->invernaderoToolStripMenuItem->Name = L"invernaderoToolStripMenuItem";
+			this->invernaderoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->invernaderoToolStripMenuItem->Text = L"Invernadero";
+			this->invernaderoToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::invernaderoToolStripMenuItem_Click);
 			// 
 			// cultivoToolStripMenuItem
 			// 
 			this->cultivoToolStripMenuItem->Name = L"cultivoToolStripMenuItem";
-			this->cultivoToolStripMenuItem->Size = System::Drawing::Size(57, 20);
+			this->cultivoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->cultivoToolStripMenuItem->Text = L"Cultivo";
+			this->cultivoToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::cultivoToolStripMenuItem_Click);
 			// 
 			// frmPrincipal
 			// 
@@ -93,7 +108,7 @@ namespace InvernaderoView {
 			this->Controls->Add(this->menuStrip1);
 			this->IsMdiContainer = true;
 			this->MainMenuStrip = this->menuStrip1;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"frmPrincipal";
 			this->Text = L"frmPrincipal";
 			this->menuStrip1->ResumeLayout(false);
@@ -105,5 +120,15 @@ namespace InvernaderoView {
 #pragma endregion
 	private: System::Void mantenimientoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void cultivoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		frmMantenimientoCultivo^ ventanaCultivo = gcnew frmMantenimientoCultivo();
+		ventanaCultivo->MdiParent = this;
+		ventanaCultivo->Show();
+	}
+	private: System::Void invernaderoToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		frmMantenimientoInvernadero^ ventanaInvernadero = gcnew frmMantenimientoInvernadero();
+		ventanaInvernadero->MdiParent = this;
+		ventanaInvernadero->Show();
+	}
+};
 }
