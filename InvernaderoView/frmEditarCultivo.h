@@ -277,9 +277,9 @@ namespace InvernaderoView {
 		String^ nombre = this->textBox1->Text;
 		String^ tipo = this->comboBox1->Text;
 		String^ etapa = this->textBox3->Text;
-		float requerimientoTemp = Convert::ToDouble(this->textBox4->Text);
-		float requerimientoHumedad = Convert::ToDouble(this->textBox2->Text);
-		float requerimientoLuz = Convert::ToDouble(this->textBox5->Text);
+		Double requerimientoTemp = Convert::ToDouble(this->textBox4->Text);
+		Double requerimientoHumedad = Convert::ToDouble(this->textBox2->Text);
+		Double requerimientoLuz = Convert::ToDouble(this->textBox5->Text);
 		CultivoController^ cultivoController = gcnew CultivoController();
 		cultivoController->actualizarCultivo(nombre, tipo, etapa, requerimientoTemp, requerimientoHumedad, requerimientoLuz);
 		MessageBox::Show("El Sensor ha sido actualizado exitosamente");

@@ -11,13 +11,21 @@ namespace InvernaderoModel {
         distrito = nullptr;
     }
 
-    Cliente::Cliente(String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion, Distrito^ distrito) {
+    Cliente::Cliente(int codigo, String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion) {
+        this->codigo = codigo;
         this->nombre = nombre;
         this->dni = dni;
         this->telefono = telefono;
         this->email = email;
         this->direccion = direccion;
-        this->distrito = distrito;
+    }
+
+    int Cliente::getCodigo() {
+        return codigo;
+    }
+
+    void Cliente::setCodigo(int codigo) {
+        this->codigo = codigo;
     }
 
     String^ Cliente::getNombre() {

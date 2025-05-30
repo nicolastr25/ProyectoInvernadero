@@ -260,9 +260,9 @@ namespace InvernaderoView {
 		String^ nombre = this->textBox1->Text;
 		String^ tipo = this->comboBox1->Text;
 		String^ etapa = this->textBox5->Text;
-		float reqTemp = Convert::ToDouble(this->textBox2->Text);
-		float reqHum = Convert::ToDouble(this->textBox3->Text);
-		float reqLuz = Convert::ToDouble(this->textBox4->Text);
+		Double reqTemp = Convert::ToDouble(this->textBox2->Text);
+		Double reqHum = Convert::ToDouble(this->textBox3->Text);
+		Double reqLuz = Convert::ToDouble(this->textBox4->Text);
 		CultivoController^ cultivoController = gcnew CultivoController();
 		cultivoController->agregarCultivo(nombre, tipo, etapa, reqTemp, reqHum, reqLuz);
 		MessageBox::Show("El cultivo se ha registrado exitosamente"); //Muestra una caja de texto con el mensaje

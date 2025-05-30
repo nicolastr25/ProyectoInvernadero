@@ -8,6 +8,7 @@ namespace InvernaderoModel {
 
     public ref class Cliente {
     private:
+        int codigo;
         String^ nombre;
         String^ dni;
         String^ telefono;
@@ -17,9 +18,12 @@ namespace InvernaderoModel {
 
     public:
         Cliente();
-        Cliente(String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion, Distrito^ distrito);
+        Cliente(int codigo, String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion);
 
         // Getters y Setters
+        int getCodigo();
+        void setCodigo(int codigo);
+
         String^ getNombre();
         void setNombre(String^ nombre);
 

@@ -4,8 +4,23 @@ using namespace InvernaderoModel;
 
 Usuario::Usuario() {
     this->nombre = nullptr;
-    this->usuario = nullptr;
+    this->user = nullptr;
     this->clave = nullptr;
+}
+
+Usuario::Usuario(int codigo, String^ nombre, String^ user, String^ clave) {
+    this->codigo = codigo;
+    this->nombre = nombre;
+    this->user = user;
+    this->clave = clave;
+}
+
+int Usuario::getCodigo() {
+    return this->codigo;
+}
+
+void Usuario::setCodigo(int codigo) {
+    this->codigo = codigo;
 }
 
 String^ Usuario::getNombre() {
@@ -16,12 +31,12 @@ void Usuario::setNombre(String^ nombre) {
     this->nombre = nombre;
 }
 
-String^ Usuario::getUsuario() {
-    return this->usuario;
+String^ Usuario::getUser() {
+    return this->user;
 }
 
-void Usuario::setUsuario(String^ usuario) {
-    this->usuario = usuario;
+void Usuario::setUser(String^ usuario) {
+    this->user = usuario;
 }
 
 String^ Usuario::getClave() {

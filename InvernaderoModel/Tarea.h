@@ -15,7 +15,7 @@ namespace InvernaderoModel {
 
     public:
         Tarea();
-        Tarea(String^ descripcion, String^ fechaLimite, String^ estado, Zona^ zona);
+        Tarea(String^ descripcion, String^ fechaLimite, String^ estado);
 
         void marcarComoRealizada();
         void asignarZona(Zona^ z);

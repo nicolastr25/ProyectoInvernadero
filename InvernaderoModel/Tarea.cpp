@@ -6,11 +6,10 @@ using namespace InvernaderoModel;
 Tarea::Tarea() {
 }
 
-Tarea::Tarea(String^ descripcion, String^ fechaLimite, String^ estado, Zona^ zona) {
+Tarea::Tarea(String^ descripcion, String^ fechaLimite, String^ estado) {
     this->descripcion = descripcion;
     this->fechaLimite = fechaLimite;
     this->estado = estado;
-    this->zona = zona;
 }
 
 void Tarea::marcarComoRealizada() {

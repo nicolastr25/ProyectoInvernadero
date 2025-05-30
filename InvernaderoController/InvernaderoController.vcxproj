@@ -111,12 +111,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClienteController.cpp" />
     <ClCompile Include="CultivoController.cpp" />
+    <ClCompile Include="EmpresaController.cpp" />
     <ClCompile Include="InvernaderoClassController.cpp" />
+    <ClCompile Include="TareaController.cpp" />
+    <ClCompile Include="UsuarioController.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClienteController.h" />
     <ClInclude Include="CultivoController.h" />
+    <ClInclude Include="EmpresaController.h" />
     <ClInclude Include="InvernaderoClassController.h" />
+    <ClInclude Include="TareaController.h" />
+    <ClInclude Include="UsuarioController.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InvernaderoModel\InvernaderoModel.vcxproj">

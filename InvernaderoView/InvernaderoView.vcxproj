@@ -123,8 +123,14 @@
   <ItemGroup>
     <ClCompile Include="frmEditarCultivo.cpp" />
     <ClCompile Include="frmEditarInvernadero.cpp" />
+    <ClCompile Include="frmMantenimientoCliente.cpp" />
     <ClCompile Include="frmMantenimientoCultivo.cpp" />
+    <ClCompile Include="frmMantenimientoDepartamento.cpp" />
+    <ClCompile Include="frmMantenimientoEmpresa.cpp" />
     <ClCompile Include="frmMantenimientoInvernadero.cpp" />
+    <ClCompile Include="frmMantenimientoMaquinaTermica.cpp" />
+    <ClCompile Include="frmMantenimientoTarea.cpp" />
+    <ClCompile Include="frmMantenimientoUsuario.cpp" />
     <ClCompile Include="frmNuevoCultivo.cpp" />
     <ClCompile Include="frmNuevoInvernadero.cpp" />
     <ClCompile Include="frmPrincipal.cpp" />
@@ -144,10 +150,28 @@
     <ClInclude Include="frmEditarInvernadero.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmMantenimientoCliente.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmMantenimientoCultivo.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmMantenimientoDepartamento.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmMantenimientoEmpresa.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmMantenimientoInvernadero.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmMantenimientoMaquinaTermica.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmMantenimientoTarea.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmMantenimientoUsuario.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmNuevoCultivo.h">
@@ -167,11 +191,29 @@
     <EmbeddedResource Include="frmEditarInvernadero.resx">
       <DependentUpon>frmEditarInvernadero.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoCliente.resx">
+      <DependentUpon>frmMantenimientoCliente.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoCultivo.resx">
       <DependentUpon>frmMantenimientoCultivo.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoDepartamento.resx">
+      <DependentUpon>frmMantenimientoDepartamento.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoEmpresa.resx">
+      <DependentUpon>frmMantenimientoEmpresa.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoInvernadero.resx">
       <DependentUpon>frmMantenimientoInvernadero.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoMaquinaTermica.resx">
+      <DependentUpon>frmMantenimientoMaquinaTermica.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoTarea.resx">
+      <DependentUpon>frmMantenimientoTarea.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoUsuario.resx">
+      <DependentUpon>frmMantenimientoUsuario.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNuevoCultivo.resx">
       <DependentUpon>frmNuevoCultivo.h</DependentUpon>
