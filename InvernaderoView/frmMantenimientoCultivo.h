@@ -340,6 +340,8 @@ namespace InvernaderoView {
 		Cultivo^ cultivo = cultivoController->buscarCultivoxNombre(nombreEditar);
 		frmEditarCultivo^ ventanaEditarCultivo = gcnew frmEditarCultivo(cultivo);
 		ventanaEditarCultivo->ShowDialog();
+		List<Cultivo^>^ listaCultivos = cultivoController->buscarTodos();
+		mostrarGrilla(listaCultivos);
 	}
 };
 }

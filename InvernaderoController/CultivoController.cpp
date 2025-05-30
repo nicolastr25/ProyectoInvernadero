@@ -84,3 +84,20 @@ void CultivoController::eliminarCultivo(String^ nombreEliminar) {
 	//Vuelvo a escribir la lista en el archivo, sin considerar al eliminado
 	escribirArchivo(listaCultivos);
 }
+void CultivoController::actualizarCultivo(String^ nombre, String^ tipo, String^ etapa, float requerimientoTemp, float requerimientoHumedad, float requerimientoLuz) {
+	List<Cultivo^>^ listaCultivos = buscarTodos();
+	for (int i = 0; i < listaCultivos->Count; i++) {
+		Cultivo^ Cultivo = listaCultivos[i];
+		if (Cultivo->getNombre()==nombre) {
+			Cultivo->setTipo(tipo);
+			Cultivo->setEtapa(etapa);
+			Cultivo->setRequerimentoTemp(requerimientoTemp);
+			Cultivo->setRequerimentoTemp(requerimientoHumedad);
+			Cultivo->setRequerimentoLuz(requerimientoLuz);
+
+			listaCultivos[i] = Cultivo;
+			break;
+		}
+	}
+	escribirArchivo(listaCultivos);
+}

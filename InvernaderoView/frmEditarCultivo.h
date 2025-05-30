@@ -99,6 +99,7 @@ namespace InvernaderoView {
 			this->button2->TabIndex = 11;
 			this->button2->Text = L"Cancelar";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &frmEditarCultivo::button2_Click);
 			// 
 			// button1
 			// 
@@ -109,6 +110,7 @@ namespace InvernaderoView {
 			this->button1->TabIndex = 10;
 			this->button1->Text = L"Grabar";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &frmEditarCultivo::button1_Click);
 			// 
 			// groupBox1
 			// 
@@ -253,11 +255,35 @@ namespace InvernaderoView {
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"frmEditarCultivo";
 			this->Text = L"frmEditarCultivo";
+			this->Load += gcnew System::EventHandler(this, &frmEditarCultivo::frmEditarCultivo_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	};
+		private: System::Void frmEditarCultivo_Load(System::Object^ sender, System::EventArgs^ e) {
+			this->textBox1->Text = this->cultivo->getNombre();
+			this->comboBox1->Text = this->cultivo->getTipo();
+			this->textBox3->Text = this->cultivo->getEtapa();
+			this->textBox4->Text = Convert::ToString(this->cultivo->getRequerimentoTemp());
+			this->textBox2->Text = Convert::ToString(this->cultivo->getRequerimentoHumedad());
+			this->textBox5->Text = Convert::ToString(this->cultivo->getRequerimentoLuz());
+		}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ nombre = this->textBox1->Text;
+		String^ tipo = this->comboBox1->Text;
+		String^ etapa = this->textBox3->Text;
+		float requerimientoTemp = Convert::ToDouble(this->textBox4->Text);
+		float requerimientoHumedad = Convert::ToDouble(this->textBox2->Text);
+		float requerimientoLuz = Convert::ToDouble(this->textBox5->Text);
+		CultivoController^ cultivoController = gcnew CultivoController();
+		cultivoController->actualizarCultivo(nombre, tipo, etapa, requerimientoTemp, requerimientoHumedad, requerimientoLuz);
+		MessageBox::Show("El Sensor ha sido actualizado exitosamente");
+		this->Close();
+	}
+};
 }

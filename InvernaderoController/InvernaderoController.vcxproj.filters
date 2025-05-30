@@ -18,9 +18,15 @@
     <ClCompile Include="CultivoController.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="InvernaderoClassController.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CultivoController.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="InvernaderoClassController.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

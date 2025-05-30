@@ -16,6 +16,6 @@ namespace InvernaderoController {
 		void eliminarCultivo(String^ nombreEliminar);
 		void agregarCultivo(String^ nombre, String^ tipo, String^ etapa, float requerimientoTemp, float requerimientoHumedad, float requerimientoLuz);
 		void escribirArchivo(List<Cultivo^>^ listaCultivos);
-
+		void actualizarCultivo(String^ nombre, String^ tipo, String^ etapa, float requerimientoTemp, float requerimientoHumedad, float requerimientoLuz);
 	};
 }

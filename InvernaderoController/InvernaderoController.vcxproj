@@ -112,9 +112,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CultivoController.cpp" />
+    <ClCompile Include="InvernaderoClassController.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CultivoController.h" />
+    <ClInclude Include="InvernaderoClassController.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InvernaderoModel\InvernaderoModel.vcxproj">

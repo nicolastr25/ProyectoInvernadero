@@ -33,6 +33,12 @@
     <ClCompile Include="frmEditarCultivo.cpp">
       <Filter>Archivos de encabezado</Filter>
     </ClCompile>
+    <ClCompile Include="frmNuevoInvernadero.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
+    <ClCompile Include="frmEditarInvernadero.cpp">
+      <Filter>Archivos de encabezado</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="frmPrincipal.h">
@@ -48,6 +54,12 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="frmEditarCultivo.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="frmNuevoInvernadero.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="frmEditarInvernadero.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
