@@ -9,7 +9,7 @@ List<Cliente^>^ ClienteController::buscarTodos() {
     List<Cliente^>^ listaClientes = gcnew List<Cliente^>();
     array<String^>^ lineas = File::ReadAllLines("Clientes.txt");
     String^ separadores = ";";
-    for each (String^ linea in lineas) {
+    for each (String ^ linea in lineas) {
         array<String^>^ campos = linea->Split(separadores->ToCharArray());
         int codigoFile = Convert::ToInt32(campos[0]);
         String^ nombreFile = campos[1];
@@ -17,8 +17,8 @@ List<Cliente^>^ ClienteController::buscarTodos() {
         String^ telefonoFile = campos[3];
         String^ emailFile = campos[4];
         String^ direccionFile = campos[5];
-        
-        Cliente^ cliente = gcnew Cliente(codigoFile, nombreFile, dniFile, telefonoFile, emailFile, direccionFile);
+
+        Cliente^ cliente = gcnew Cliente(codigoFile, nombreFile, dniFile, telefonoFile, emailFile, direccionFile, nullptr);
         listaClientes->Add(cliente);
     }
     return listaClientes;
@@ -28,7 +28,7 @@ List<Cliente^>^ ClienteController::buscarClientexNombrexDni(String^ nombre, Stri
     List<Cliente^>^ listaClientes = gcnew List<Cliente^>();
     array<String^>^ lineas = File::ReadAllLines("Clientes.txt");
     String^ separadores = ";";
-    for each (String^ linea in lineas) {
+    for each (String ^ linea in lineas) {
         array<String^>^ campos = linea->Split(separadores->ToCharArray());
         int codigoFile = Convert::ToInt32(campos[0]);
         String^ nombreFile = campos[1];
@@ -37,7 +37,7 @@ List<Cliente^>^ ClienteController::buscarClientexNombrexDni(String^ nombre, Stri
         String^ emailFile = campos[4];
         String^ direccionFile = campos[5];
         if (nombreFile->Contains(nombre) && dniFile->Contains(dni)) {
-            Cliente^ cliente = gcnew Cliente(codigoFile, nombreFile, dniFile, telefonoFile, emailFile, direccionFile);
+            Cliente^ cliente = gcnew Cliente(codigoFile, nombreFile, dniFile, telefonoFile, emailFile, direccionFile, nullptr);
             listaClientes->Add(cliente);
         }
     }
@@ -55,9 +55,9 @@ Cliente^ ClienteController::buscarClientexCodigo(int codigo) {
     return nullptr;
 }
 
-void ClienteController::agregarCliente(int codigo, String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion) {
+void ClienteController::agregarCliente(int codigo, String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion, Distrito^ distrito) {
     List<Cliente^>^ listaClientes = buscarTodos();
-    Cliente^ clienteNuevo = gcnew Cliente(codigo, nombre, dni, telefono, email, direccion);
+    Cliente^ clienteNuevo = gcnew Cliente(codigo, nombre, dni, telefono, email, direccion, distrito);
     listaClientes->Add(clienteNuevo);
     escribirArchivo(listaClientes);
 }
@@ -83,7 +83,7 @@ void ClienteController::eliminarCliente(int codigoEliminar) {
     escribirArchivo(listaClientes);
 }
 
-void ClienteController::actualizarCliente(int codigo, String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion) {
+void ClienteController::actualizarCliente(int codigo, String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion, Distrito^ distrito) {
     List<Cliente^>^ listaClientes = buscarTodos();
     for (int i = 0; i < listaClientes->Count; i++) {
         Cliente^ cliente = listaClientes[i];
@@ -93,6 +93,7 @@ void ClienteController::actualizarCliente(int codigo, String^ nombre, String^ dn
             cliente->setTelefono(telefono);
             cliente->setEmail(email);
             cliente->setDireccion(direccion);
+            cliente->setDistrito(distrito);
             listaClientes[i] = cliente;
             break;
         }

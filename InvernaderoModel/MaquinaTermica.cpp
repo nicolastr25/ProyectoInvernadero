@@ -3,38 +3,50 @@
 using namespace InvernaderoModel;
 
 MaquinaTermica::MaquinaTermica() {
-    this->estado = false;
+
 }
 
-MaquinaTermica::MaquinaTermica(String^ id, bool estado) {
+MaquinaTermica::MaquinaTermica(int id, String^ estado, String^ tipo, String^ Fabricante) {
     this->id = id;
     this->estado = estado;
+    this->tipo = tipo;
+    this->fabricante = Fabricante;
 }
 
-void MaquinaTermica::encender() {
+/*void MaquinaTermica::encender() {
     this->estado = true;
-}
+} */
 
-void MaquinaTermica::apagar() {
+/*void MaquinaTermica::apagar() {
     this->estado = false;
-}
+}*/
 
 String^ MaquinaTermica::getTipo() {
-    return "Genérica"; // Puedes personalizar esto si hay herencia
+    return this->tipo; // Puedes personalizar esto si hay herencia
 }
 
-String^ MaquinaTermica::getId() {
+int MaquinaTermica::getId() {
     return this->id;
 }
 
-void MaquinaTermica::setId(String^ id) {
+void MaquinaTermica::setId(int id) {
     this->id = id;
 }
 
-bool MaquinaTermica::getEstado() {
+String^ MaquinaTermica::getEstado() {
     return this->estado;
 }
 
-void MaquinaTermica::setEstado(bool estado) {
+void MaquinaTermica::setEstado(String^ estado) {
     this->estado = estado;
+}
+
+void MaquinaTermica::setTipo(String^ tipo) {
+    this->tipo = tipo;
+}
+String^ MaquinaTermica::getFabricante() {
+    return this->fabricante;
+}
+void MaquinaTermica::setFabricante(String^ fabricante) {
+    this->fabricante = fabricante;
 }

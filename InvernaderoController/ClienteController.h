@@ -14,9 +14,9 @@ namespace InvernaderoController {
 		Cliente^ buscarClientexCodigo(int codigo);
 		List<Cliente^>^ buscarClientexNombrexDni(String^ nombre, String^ dni);
 		void eliminarCliente(int codigoEliminar);
-		void agregarCliente(int codigo, String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion);
+		void agregarCliente(int codigo, String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion, Distrito^ distrito);
 		void escribirArchivo(List<Cliente^>^ listaClientes);
-		void actualizarCliente(int codigo, String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion);
+		void actualizarCliente(int codigo, String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion, Distrito^ distrito);
 	};
 }
 

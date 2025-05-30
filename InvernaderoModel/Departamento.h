@@ -6,18 +6,18 @@ namespace InvernaderoModel {
 
     public ref class Departamento {
     private:
+        int codigo;
         String^ nombre;
-        String^ codigo;
         String^ region;
     public:
         Departamento();
-        Departamento(String^ nombre, String^ codigo, String^ region);
+        Departamento(int codigo, String^ nombre, String^ region);
 
         String^ getNombre();
         void setNombre(String^ nombre);
 
-        String^ getCodigo();
-        void setCodigo(String^ codigo);
+        int getCodigo();
+        void setCodigo(int codigo);
 
         String^ getRegion();
         void setRegion(String^ region);

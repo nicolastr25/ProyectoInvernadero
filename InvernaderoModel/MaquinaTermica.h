@@ -6,20 +6,26 @@ namespace InvernaderoModel {
 
     public ref class MaquinaTermica {
     private:
-        String^ id;
-        bool estado;
+        int id;
+        String^ estado;
+        String^ tipo;
+        String^ fabricante;
 
     public:
         MaquinaTermica();
-        MaquinaTermica(String^ id, bool estado);
+        MaquinaTermica(int id, String^ estado, String^ tipo, String^ Fabricante);
 
-        void encender();
-        void apagar();
+        //void encender();
+        //void apagar();
         String^ getTipo();
+        void setTipo(String^ tipo);
+        String^ getFabricante();
+        void setFabricante(String^ fabricante);
 
-        String^ getId();
-        void setId(String^ id);
-        bool getEstado();
-        void setEstado(bool estado);
+        int getId();
+        void setId(int id);
+        String^ getEstado();
+        void setEstado(String^ estado);
+
     };
 }

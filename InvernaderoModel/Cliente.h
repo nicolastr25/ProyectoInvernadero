@@ -18,7 +18,7 @@ namespace InvernaderoModel {
 
     public:
         Cliente();
-        Cliente(int codigo, String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion);
+        Cliente(int condigo, String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion, Distrito^ distrito);
 
         // Getters y Setters
         int getCodigo();

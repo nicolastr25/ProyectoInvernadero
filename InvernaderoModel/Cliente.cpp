@@ -3,23 +3,17 @@
 namespace InvernaderoModel {
 
     Cliente::Cliente() {
-        nombre = "";
-        dni = "";
-        telefono = "";
-        email = "";
-        direccion = "";
-        distrito = nullptr;
     }
 
-    Cliente::Cliente(int codigo, String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion) {
+    Cliente::Cliente(int codigo, String^ nombre, String^ dni, String^ telefono, String^ email, String^ direccion, Distrito^ distrito) {
         this->codigo = codigo;
         this->nombre = nombre;
         this->dni = dni;
         this->telefono = telefono;
         this->email = email;
         this->direccion = direccion;
+        this->distrito = distrito;
     }
-
     int Cliente::getCodigo() {
         return codigo;
     }
@@ -27,7 +21,6 @@ namespace InvernaderoModel {
     void Cliente::setCodigo(int codigo) {
         this->codigo = codigo;
     }
-
     String^ Cliente::getNombre() {
         return nombre;
     }
@@ -63,7 +56,6 @@ namespace InvernaderoModel {
     String^ Cliente::getDireccion() {
         return direccion;
     }
-
     void Cliente::setDireccion(String^ direccion) {
         this->direccion = direccion;
     }

@@ -121,8 +121,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="fmrEditarUsuario.cpp" />
+    <ClCompile Include="frmEditarCliente.cpp" />
     <ClCompile Include="frmEditarCultivo.cpp" />
+    <ClCompile Include="frmEditarDepartamento.cpp" />
+    <ClCompile Include="frmEditarEmpresa.cpp" />
     <ClCompile Include="frmEditarInvernadero.cpp" />
+    <ClCompile Include="frmEditarMaquinaTermica.cpp" />
+    <ClCompile Include="frmEditarTarea.cpp" />
     <ClCompile Include="frmMantenimientoCliente.cpp" />
     <ClCompile Include="frmMantenimientoCultivo.cpp" />
     <ClCompile Include="frmMantenimientoDepartamento.cpp" />
@@ -131,8 +137,14 @@
     <ClCompile Include="frmMantenimientoMaquinaTermica.cpp" />
     <ClCompile Include="frmMantenimientoTarea.cpp" />
     <ClCompile Include="frmMantenimientoUsuario.cpp" />
+    <ClCompile Include="frmNuevoCliente.cpp" />
     <ClCompile Include="frmNuevoCultivo.cpp" />
+    <ClCompile Include="frmNuevoDepartamento.cpp" />
+    <ClCompile Include="frmNuevoEmpresa.cpp" />
     <ClCompile Include="frmNuevoInvernadero.cpp" />
+    <ClCompile Include="frmNuevoMaquinaTermica.cpp" />
+    <ClCompile Include="frmNuevoTarea.cpp" />
+    <ClCompile Include="frmNuevoUsuario.cpp" />
     <ClCompile Include="frmPrincipal.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -144,10 +156,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="fmrEditarUsuario.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmEditarCliente.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmEditarCultivo.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmEditarDepartamento.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmEditarEmpresa.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmEditarInvernadero.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmEditarMaquinaTermica.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmEditarTarea.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmMantenimientoCliente.h">
@@ -174,10 +204,28 @@
     <ClInclude Include="frmMantenimientoUsuario.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmNuevoCliente.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmNuevoCultivo.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmNuevoDepartamento.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmNuevoEmpresa.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmNuevoInvernadero.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmNuevoMaquinaTermica.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmNuevoTarea.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmNuevoUsuario.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmPrincipal.h">
@@ -185,11 +233,26 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="fmrEditarUsuario.resx">
+      <DependentUpon>fmrEditarUsuario.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarCliente.resx">
+      <DependentUpon>frmEditarCliente.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditarCultivo.resx">
       <DependentUpon>frmEditarCultivo.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarDepartamento.resx">
+      <DependentUpon>frmEditarDepartamento.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditarInvernadero.resx">
       <DependentUpon>frmEditarInvernadero.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarMaquinaTermica.resx">
+      <DependentUpon>frmEditarMaquinaTermica.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarTarea.resx">
+      <DependentUpon>frmEditarTarea.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoCliente.resx">
       <DependentUpon>frmMantenimientoCliente.h</DependentUpon>
@@ -215,11 +278,26 @@
     <EmbeddedResource Include="frmMantenimientoUsuario.resx">
       <DependentUpon>frmMantenimientoUsuario.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoCliente.resx">
+      <DependentUpon>frmNuevoCliente.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNuevoCultivo.resx">
       <DependentUpon>frmNuevoCultivo.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoDepartamento.resx">
+      <DependentUpon>frmNuevoDepartamento.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNuevoInvernadero.resx">
       <DependentUpon>frmNuevoInvernadero.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoMaquinaTermica.resx">
+      <DependentUpon>frmNuevoMaquinaTermica.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoTarea.resx">
+      <DependentUpon>frmNuevoTarea.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoUsuario.resx">
+      <DependentUpon>frmNuevoUsuario.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.h</DependentUpon>

@@ -5,30 +5,30 @@ namespace InvernaderoModel {
     Departamento::Departamento() {
     }
 
-    Departamento::Departamento(String^ nombre, String^ codigo, String^ region) {
-        this->nombre = nombre;
+    Departamento::Departamento(int codigo, String^ nombre, String^ region) {
         this->codigo = codigo;
+        this->nombre = nombre;
         this->region = region;
     }
 
     String^ Departamento::getNombre() {
-        return nombre;
+        return this->nombre;
     }
 
     void Departamento::setNombre(String^ nombre) {
         this->nombre = nombre;
     }
 
-    String^ Departamento::getCodigo() {
-        return codigo;
+    int Departamento::getCodigo() {
+        return this->codigo;
     }
 
-    void Departamento::setCodigo(String^ codigo) {
+    void Departamento::setCodigo(int codigo) {
         this->codigo = codigo;
     }
 
     String^ Departamento::getRegion() {
-        return region;
+        return this->region;
     }
 
     void Departamento::setRegion(String^ region) {

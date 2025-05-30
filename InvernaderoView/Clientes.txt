@@ -1,0 +1,3 @@
+1;David Allasi;48798578;987654321;david.allasi@gmail.com;Av. Los Pinos 123;Miraflores
+3;Sofia Delgado;6587454785;912345678;sofia.delgado@hotmail.com;Jr. Las Flores 456;San Borja
+4;Vanessa Alvitez;45787478;956123789;vanessa.ac@gmail.com;Calle Lima 789;Magdalena
