@@ -129,6 +129,8 @@
     <ClCompile Include="frmEditarInvernadero.cpp" />
     <ClCompile Include="frmEditarMaquinaTermica.cpp" />
     <ClCompile Include="frmEditarTarea.cpp" />
+    <ClCompile Include="frmInfoDetalleInvernadero.cpp" />
+    <ClCompile Include="frmInfoInvernadero.cpp" />
     <ClCompile Include="frmMantenimientoCliente.cpp" />
     <ClCompile Include="frmMantenimientoCultivo.cpp" />
     <ClCompile Include="frmMantenimientoDepartamento.cpp" />
@@ -178,6 +180,12 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmEditarTarea.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmInfoDetalleInvernadero.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmInfoInvernadero.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmMantenimientoCliente.h">
@@ -253,6 +261,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditarTarea.resx">
       <DependentUpon>frmEditarTarea.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoDetalleInvernadero.resx">
+      <DependentUpon>frmInfoDetalleInvernadero.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoInvernadero.resx">
+      <DependentUpon>frmInfoInvernadero.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoCliente.resx">
       <DependentUpon>frmMantenimientoCliente.h</DependentUpon>

@@ -90,7 +90,7 @@ namespace InvernaderoView {
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
-			this->menuStrip1->Size = System::Drawing::Size(813, 24);
+			this->menuStrip1->Size = System::Drawing::Size(993, 24);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -108,56 +108,56 @@ namespace InvernaderoView {
 			// invernaderoToolStripMenuItem
 			// 
 			this->invernaderoToolStripMenuItem->Name = L"invernaderoToolStripMenuItem";
-			this->invernaderoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->invernaderoToolStripMenuItem->Size = System::Drawing::Size(166, 22);
 			this->invernaderoToolStripMenuItem->Text = L"Invernadero";
 			this->invernaderoToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::invernaderoToolStripMenuItem_Click);
 			// 
 			// cultivoToolStripMenuItem
 			// 
 			this->cultivoToolStripMenuItem->Name = L"cultivoToolStripMenuItem";
-			this->cultivoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->cultivoToolStripMenuItem->Size = System::Drawing::Size(166, 22);
 			this->cultivoToolStripMenuItem->Text = L"Cultivo";
 			this->cultivoToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::cultivoToolStripMenuItem_Click);
 			// 
 			// tareaToolStripMenuItem
 			// 
 			this->tareaToolStripMenuItem->Name = L"tareaToolStripMenuItem";
-			this->tareaToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->tareaToolStripMenuItem->Size = System::Drawing::Size(166, 22);
 			this->tareaToolStripMenuItem->Text = L"Tarea";
 			this->tareaToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::tareaToolStripMenuItem_Click);
 			// 
 			// usuarioToolStripMenuItem
 			// 
 			this->usuarioToolStripMenuItem->Name = L"usuarioToolStripMenuItem";
-			this->usuarioToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->usuarioToolStripMenuItem->Size = System::Drawing::Size(166, 22);
 			this->usuarioToolStripMenuItem->Text = L"Usuario";
 			this->usuarioToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::usuarioToolStripMenuItem_Click);
 			// 
 			// clienteToolStripMenuItem
 			// 
 			this->clienteToolStripMenuItem->Name = L"clienteToolStripMenuItem";
-			this->clienteToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->clienteToolStripMenuItem->Size = System::Drawing::Size(166, 22);
 			this->clienteToolStripMenuItem->Text = L"Cliente";
 			this->clienteToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::clienteToolStripMenuItem_Click);
 			// 
 			// empresaToolStripMenuItem
 			// 
 			this->empresaToolStripMenuItem->Name = L"empresaToolStripMenuItem";
-			this->empresaToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->empresaToolStripMenuItem->Size = System::Drawing::Size(166, 22);
 			this->empresaToolStripMenuItem->Text = L"Empresa";
 			this->empresaToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::empresaToolStripMenuItem_Click);
 			// 
 			// departamentoToolStripMenuItem
 			// 
 			this->departamentoToolStripMenuItem->Name = L"departamentoToolStripMenuItem";
-			this->departamentoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->departamentoToolStripMenuItem->Size = System::Drawing::Size(166, 22);
 			this->departamentoToolStripMenuItem->Text = L"Departamento";
 			this->departamentoToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::departamentoToolStripMenuItem_Click);
 			// 
 			// maquinaTermicaToolStripMenuItem
 			// 
 			this->maquinaTermicaToolStripMenuItem->Name = L"maquinaTermicaToolStripMenuItem";
-			this->maquinaTermicaToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->maquinaTermicaToolStripMenuItem->Size = System::Drawing::Size(166, 22);
 			this->maquinaTermicaToolStripMenuItem->Text = L"Maquina Termica";
 			this->maquinaTermicaToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::maquinaTermicaToolStripMenuItem_Click);
 			// 
@@ -165,7 +165,7 @@ namespace InvernaderoView {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(813, 530);
+			this->ClientSize = System::Drawing::Size(993, 727);
 			this->Controls->Add(this->menuStrip1);
 			this->IsMdiContainer = true;
 			this->MainMenuStrip = this->menuStrip1;
