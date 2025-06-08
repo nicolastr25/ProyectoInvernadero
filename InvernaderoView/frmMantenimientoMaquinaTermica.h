@@ -1,13 +1,17 @@
 #pragma once
-
+#include "frmNuevoMaquinaTermica.h"
+#include "frmEditarMaquinaTermica.h"
 namespace InvernaderoView {
 
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
+	using namespace System::Collections::Generic;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace InvernaderoModel;
+	using namespace InvernaderoController;
 
 	/// <summary>
 	/// Resumen de frmMantenimientoMaquinaTermica
@@ -55,6 +59,14 @@ namespace InvernaderoView {
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
+
+
+
+
+
+
 
 
 	private:
@@ -83,6 +95,8 @@ namespace InvernaderoView {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
@@ -97,6 +111,7 @@ namespace InvernaderoView {
 			this->button4->TabIndex = 22;
 			this->button4->Text = L"Eliminar";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &frmMantenimientoMaquinaTermica::button4_Click);
 			// 
 			// button3
 			// 
@@ -107,6 +122,7 @@ namespace InvernaderoView {
 			this->button3->TabIndex = 21;
 			this->button3->Text = L"Editar";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &frmMantenimientoMaquinaTermica::button3_Click);
 			// 
 			// button2
 			// 
@@ -117,6 +133,7 @@ namespace InvernaderoView {
 			this->button2->TabIndex = 20;
 			this->button2->Text = L"Nuevo";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &frmMantenimientoMaquinaTermica::button2_Click);
 			// 
 			// groupBox2
 			// 
@@ -133,9 +150,9 @@ namespace InvernaderoView {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(2) {
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
 				this->Column1,
-					this->Column2
+					this->Column2, this->Column3, this->Column4
 			});
 			this->dataGridView1->Location = System::Drawing::Point(63, 32);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
@@ -164,12 +181,13 @@ namespace InvernaderoView {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(355, 63);
+			this->label4->Location = System::Drawing::Point(302, 58);
 			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(43, 13);
+			this->label4->Size = System::Drawing::Size(60, 13);
 			this->label4->TabIndex = 12;
-			this->label4->Text = L"Estado:";
+			this->label4->Text = L"Fabricante:";
+			this->label4->Click += gcnew System::EventHandler(this, &frmMantenimientoMaquinaTermica::label4_Click);
 			// 
 			// button1
 			// 
@@ -180,10 +198,11 @@ namespace InvernaderoView {
 			this->button1->TabIndex = 9;
 			this->button1->Text = L"Buscar";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &frmMantenimientoMaquinaTermica::button1_Click);
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(436, 60);
+			this->textBox2->Location = System::Drawing::Point(362, 55);
 			this->textBox2->Margin = System::Windows::Forms::Padding(2);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(128, 20);
@@ -195,9 +214,10 @@ namespace InvernaderoView {
 			this->label2->Location = System::Drawing::Point(71, 55);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(21, 13);
+			this->label2->Size = System::Drawing::Size(31, 13);
 			this->label2->TabIndex = 7;
-			this->label2->Text = L"ID:";
+			this->label2->Text = L"Tipo:";
+			this->label2->Click += gcnew System::EventHandler(this, &frmMantenimientoMaquinaTermica::label2_Click);
 			// 
 			// textBox1
 			// 
@@ -216,10 +236,21 @@ namespace InvernaderoView {
 			// 
 			// Column2
 			// 
-			this->Column2->HeaderText = L"Estado:";
+			this->Column2->HeaderText = L"Tipo:";
 			this->Column2->MinimumWidth = 6;
 			this->Column2->Name = L"Column2";
+			this->Column2->Resizable = System::Windows::Forms::DataGridViewTriState::True;
 			this->Column2->Width = 125;
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"Fabricante:";
+			this->Column3->Name = L"Column3";
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Estado:";
+			this->Column4->Name = L"Column4";
 			// 
 			// frmMantenimientoMaquinaTermica
 			// 
@@ -241,5 +272,52 @@ namespace InvernaderoView {
 
 		}
 #pragma endregion
-	};
+	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ tipo = this->textBox1->Text;
+	String^ fabricante = this->textBox2->Text;
+	maquinaTermicaController^ maquinaTermController = gcnew maquinaTermicaController();
+	List<MaquinaTermica^>^ listaMaquinaTermicas = maquinaTermController->buscarmaquinaTermicaxFabricantexTipo(tipo, fabricante);
+	mostrarGrilla(listaMaquinaTermicas);
+}
+private: void mostrarGrilla(List<MaquinaTermica^>^ listaMaquinaTermicas) {
+	this->dataGridView1->Rows->Clear();
+	//La propiedad Count te indica la cantidad de elementos que contiene una lista
+	for (int i = 0; i < listaMaquinaTermicas->Count; i++) {
+		MaquinaTermica^ maquinaTermica = listaMaquinaTermicas[i];
+		array<String^>^ fila = gcnew array<String^>(4);
+		fila[0] = Convert::ToString(maquinaTermica->getId());
+		fila[1] = maquinaTermica->getTipo();
+		fila[2] = maquinaTermica->getFabricante();
+		fila[3] = maquinaTermica->getEstado();
+		this->dataGridView1->Rows->Add(fila);
+	}
+}
+
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	frmNuevoMaquinaTermica^ ventanaNuevoMaquinaTerm = gcnew frmNuevoMaquinaTermica();
+	ventanaNuevoMaquinaTerm->ShowDialog();
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index;
+	int codigoEliminar = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
+	maquinaTermicaController^ maquinaTermController = gcnew maquinaTermicaController();
+	maquinaTermController->eliminarmaquinaTermica(codigoEliminar);
+	MessageBox::Show("La Maquina Termica ha sido eliminada exitosamente");
+	this->dataGridView1->Rows->Clear();
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index;
+	int codigoEditar = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
+	maquinaTermicaController^ maquinaTermController = gcnew maquinaTermicaController();
+	MaquinaTermica^ maquinaTermica = maquinaTermController->buscarmaquinaTermicaxCodigo(codigoEditar);
+	frmEditarMaquinaTermica^ ventanaEditarMaquinaTermica = gcnew frmEditarMaquinaTermica(maquinaTermica);
+	ventanaEditarMaquinaTermica->ShowDialog();
+	List<MaquinaTermica^>^ listaMaquinaTermicas = maquinaTermController->buscarTodos();
+	mostrarGrilla(listaMaquinaTermicas);
+}
+};
 }

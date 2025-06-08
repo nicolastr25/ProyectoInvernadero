@@ -12,9 +12,9 @@ List<MaquinaTermica^>^ maquinaTermicaController::buscarTodos() {
 	for each(String ^ linea in lineas) {
 		array<String^>^ campos = linea->Split(separadores->ToCharArray());
 		int codigoFile = Convert::ToInt32(campos[0]);
-		String^ estadoFile = campos[1];
-		String^ tipoFile = campos[2];
-		String^ fabricanteFile = campos[3];
+		String^ tipoFile = campos[1];
+		String^ fabricanteFile = campos[2];
+		String^ estadoFile = campos[3];
 
 
 		MaquinaTermica^ maquinaTermica = gcnew MaquinaTermica(codigoFile, estadoFile, tipoFile, fabricanteFile);
@@ -39,9 +39,9 @@ List<MaquinaTermica^>^ maquinaTermicaController::buscarmaquinaTermicaxFabricante
 	for each(String ^ linea in lineas) {
 		array<String^>^ campos = linea->Split(separadores->ToCharArray());
 		int codigoFile = Convert::ToInt32(campos[0]);
-		String^ estadoFile = campos[1];
-		String^ tipoFile = campos[2];
-		String^ fabricanteFile = campos[3];
+		String^ tipoFile = campos[1];
+		String^ fabricanteFile = campos[2];
+		String^ estadoFile = campos[3];
 
 		if (tipoFile->Contains(tipo) && fabricanteFile->Contains(fabricante)) {
 			MaquinaTermica^ maquinaTermica = gcnew MaquinaTermica(codigoFile, estadoFile, tipoFile, fabricanteFile);
@@ -63,9 +63,9 @@ void maquinaTermicaController::eliminarmaquinaTermica(int codigoEliminar) {
 	//Vuelvo a escribir la lista en el archivo, sin considerar al eliminado
 	escribirArchivo(listaMaquinaTermicas);
 }
-void maquinaTermicaController::agregarmaquinaTermica(int codigo, String^ estado, String^ tipo, String^ fabricante) {
+void maquinaTermicaController::agregarmaquinaTermica(int codigo, String^ tipo, String^fabricante, String^estado) {
 	List<MaquinaTermica^>^ listaMaquinaTermicas = buscarTodos();
-	MaquinaTermica^ MaquinaTermicaNuevo = gcnew MaquinaTermica(codigo, estado, tipo, fabricante);
+	MaquinaTermica^ MaquinaTermicaNuevo = gcnew MaquinaTermica(codigo,estado,tipo, fabricante);
 	listaMaquinaTermicas->Add(MaquinaTermicaNuevo);
 	escribirArchivo(listaMaquinaTermicas);
 }
@@ -73,11 +73,11 @@ void maquinaTermicaController::escribirArchivo(List<MaquinaTermica^>^ listaMaqui
 	array<String^>^ lineasArchivo = gcnew array<String^>(listaMaquinaTermicas->Count);
 	for (int i = 0; i < listaMaquinaTermicas->Count; i++) {
 		MaquinaTermica^ MaquinaTermica = listaMaquinaTermicas[i];
-		lineasArchivo[i] = MaquinaTermica->getId() + ";" + MaquinaTermica->getEstado() + ";" + MaquinaTermica->getTipo() + ";" + MaquinaTermica->getFabricante();
+		lineasArchivo[i] = MaquinaTermica->getId() + ";" + MaquinaTermica->getTipo() + ";" + MaquinaTermica->getFabricante() + ";" + MaquinaTermica->getEstado();
 	}
 	File::WriteAllLines("MaquinaTermicas.txt", lineasArchivo);
 }
-void maquinaTermicaController::actualizarmaquinaTermica(int codigo, String^ estado, String^ tipo, String^ fabricante) {
+void maquinaTermicaController::actualizarmaquinaTermica(int codigo, String^ tipo, String^ fabricante, String^ estado) {
 	List<MaquinaTermica^>^ listaMaquinaTermicas = buscarTodos();
 	for (int i = 0; i < listaMaquinaTermicas->Count; i++) {
 		MaquinaTermica^ MaquinaTermica = listaMaquinaTermicas[i];
