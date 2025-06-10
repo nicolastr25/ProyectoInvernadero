@@ -1,5 +1,6 @@
 #pragma once
-
+#include "frmNuevoTarea.h"
+#include "frmEditarTarea.h";
 namespace InvernaderoView {
 
 	using namespace System;
@@ -118,6 +119,7 @@ namespace InvernaderoView {
 			this->groupBox1->TabIndex = 14;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Criterios de Búsqueda";
+			this->groupBox1->Enter += gcnew System::EventHandler(this, &frmMantenimientoTarea::groupBox1_Enter);
 			// 
 			// textBox4
 			// 
@@ -164,7 +166,7 @@ namespace InvernaderoView {
 			this->button1->TabIndex = 9;
 			this->button1->Text = L"Buscar";
 			this->button1->UseVisualStyleBackColor = true;
-			//this->button1->Click += gcnew System::EventHandler(this, &frmMantenimientoTarea::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &frmMantenimientoTarea::button1_Click_1);
 			// 
 			// textBox2
 			// 
@@ -211,6 +213,7 @@ namespace InvernaderoView {
 			this->button4->TabIndex = 21;
 			this->button4->Text = L"Eliminar";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &frmMantenimientoTarea::button4_Click_1);
 			// 
 			// button3
 			// 
@@ -221,6 +224,7 @@ namespace InvernaderoView {
 			this->button3->TabIndex = 20;
 			this->button3->Text = L"Editar";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &frmMantenimientoTarea::button3_Click);
 			// 
 			// button2
 			// 
@@ -231,6 +235,7 @@ namespace InvernaderoView {
 			this->button2->TabIndex = 19;
 			this->button2->Text = L"Nuevo";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &frmMantenimientoTarea::button2_Click);
 			// 
 			// groupBox2
 			// 
@@ -299,6 +304,7 @@ namespace InvernaderoView {
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"frmMantenimientoTarea";
 			this->Text = L"frmMantenimientoTarea";
+			this->Load += gcnew System::EventHandler(this, &frmMantenimientoTarea::frmMantenimientoTarea_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
@@ -307,12 +313,12 @@ namespace InvernaderoView {
 
 		}
 #pragma endregion
-	/*private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ descripcion = this->textBox1->Text;
-		TareaController^ tareaController = gcnew TareaController();
-		List<Tarea^>^ listaTareas = tareaController->buscarTareaxDescripcion(descripcion);
-		mostrarGrilla(listaTareas);
-	}*/
+		//TareaController^ tareaController = gcnew TareaController();
+		//List<Tarea^>^ listaTareas = tareaController->buscarTareaxDescripcion(descripcion);
+		//mostrarGrilla(listaTareas);
+	}
 	private: void mostrarGrilla(List<Tarea^>^ listaTareas) {
 		this->dataGridView1->Rows->Clear();
 		//La propiedad Count te indica la cantidad de elementos que contiene una lista
@@ -326,12 +332,45 @@ namespace InvernaderoView {
 		}
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		/*int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index;
+		String^ descripcionEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+		TareaController^ tareaController = gcnew TareaController();
+		tareaController->eliminarTarea(descripcionEliminar);
+		MessageBox::Show("La tarea ha sido eliminada exitosamente");
+		this->dataGridView1->Rows->Clear();*/
+	}
+private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	//Nuevo:
+	frmNuevoTarea^ ventanaNuevaTarea = gcnew frmNuevoTarea();
+	ventanaNuevaTarea->ShowDialog();
+}
+private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	String^ descripcion = this->textBox1->Text;
+	TareaController^ tareaController = gcnew TareaController();
+	List<Tarea^>^ listaTareas = tareaController->buscarListaTareaxDescripcion(descripcion);
+	mostrarGrilla(listaTareas);
+}
+private: System::Void frmMantenimientoTarea_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button4_Click_1(System::Object^ sender, System::EventArgs^ e) {
 		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index;
 		String^ descripcionEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
 		TareaController^ tareaController = gcnew TareaController();
 		tareaController->eliminarTarea(descripcionEliminar);
 		MessageBox::Show("La tarea ha sido eliminada exitosamente");
 		this->dataGridView1->Rows->Clear();
-	}
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index;
+	String^ descripcionEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+	TareaController^ tareaController = gcnew TareaController();
+	Tarea^ tarea = tareaController->buscarTareaxDescripcion(descripcionEditar);
+	frmEditarTarea^ ventanaEditarTarea = gcnew frmEditarTarea(tarea);
+	ventanaEditarTarea->ShowDialog();
+	List<Tarea^>^ listaTareas = tareaController->buscarTodos();
+	mostrarGrilla(listaTareas);
+}
 };
 }

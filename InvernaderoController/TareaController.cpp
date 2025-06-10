@@ -14,11 +14,11 @@ List<Tarea^>^ TareaController::buscarTodos() {
 
 	for each (String ^ linea in lineas) {
 		array<String^>^ campos = linea->Split(separadores->ToCharArray());
-
-		String^ descripcionFile = campos[0];
-		String^ fechaLimiteFile = campos[1];
-		String^ estadoFile = campos[2];
-		Tarea^ tarea = gcnew Tarea(descripcionFile, fechaLimiteFile, estadoFile);
+		int idFile = Convert::ToInt32(campos[0]);
+		String^ descripcionFile = campos[1];
+		String^ fechaLimiteFile = campos[2];
+		String^ estadoFile = campos[3];
+		Tarea^ tarea = gcnew Tarea(idFile,descripcionFile, fechaLimiteFile, estadoFile);
 		listaTareas->Add(tarea);
 	}
 
@@ -29,16 +29,27 @@ Tarea^ TareaController::buscarTareaxDescripcion(String^ descripcion) {
 	List<Tarea^>^ listaTareas = buscarTodos();
 	for (int i = 0; i < listaTareas->Count; i++) {
 		Tarea^ tarea = listaTareas[i];
-		if (tarea->getDescripcion()->Contains(descripcion)) {
+		if (tarea->getDescripcion()->Equals(descripcion)) {
 			return tarea;
 		}
 	}
 	return nullptr;
 }
-
-void TareaController::agregarTarea(String^ descripcion, String^ fechaLimite, String^ estado, Zona^ zona) {
+List<Tarea^>^ TareaController::buscarListaTareaxDescripcion(String^ descripcion) {
 	List<Tarea^>^ listaTareas = buscarTodos();
-	Tarea^ tareaNueva = gcnew Tarea(descripcion, fechaLimite, estado);
+	List<Tarea^>^ listaTareasxDescripcion = gcnew List<Tarea^>();
+	for (int i = 0; i < listaTareas->Count; i++) {
+		Tarea^ tarea = listaTareas[i];
+		if (tarea->getDescripcion()->Contains(descripcion)) {
+			listaTareasxDescripcion->Add(tarea);
+		}
+	}
+	return listaTareasxDescripcion;
+}
+
+void TareaController::agregarTarea(int id,String^ descripcion, String^ fechaLimite, String^ estado) {
+	List<Tarea^>^ listaTareas = buscarTodos();
+	Tarea^ tareaNueva = gcnew Tarea(id, descripcion, fechaLimite, estado);
 	listaTareas->Add(tareaNueva);
 	escribirArchivo(listaTareas);
 }
@@ -47,7 +58,7 @@ void TareaController::escribirArchivo(List<Tarea^>^ listaTareas) {
 	array<String^>^ lineasArchivo = gcnew array<String^>(listaTareas->Count);
 	for (int i = 0; i < listaTareas->Count; i++) {
 		Tarea^ tarea = listaTareas[i];
-		lineasArchivo[i] = tarea->getDescripcion() + ";" +
+		lineasArchivo[i] = tarea->getId() + ";" + tarea->getDescripcion() + ";" +
 			tarea->getFechaLimite() + ";" +
 			tarea->getEstado() + ";";
 	}
@@ -65,3 +76,19 @@ void TareaController::eliminarTarea(String^ descripcionEliminar) {
 	}
 	escribirArchivo(listaTareas);
 }
+void TareaController::actualizarTarea(int id, String^ descripcion, String^ fechaLimite, String^ estado) {
+	List<Tarea^>^ listaTareas = buscarTodos();
+	for (int i = 0; i < listaTareas->Count; i++) {
+		Tarea^ Tarea = listaTareas[i];
+		if (Tarea->getId() == id) {
+			Tarea->setDescripcion(descripcion);
+			Tarea->setFechaLimite(fechaLimite);
+			Tarea->setEstado(estado);
+			
+			listaTareas[i] = Tarea;
+			break;
+		}
+	}
+	escribirArchivo(listaTareas);
+}
+

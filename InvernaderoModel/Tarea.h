@@ -3,11 +3,12 @@
 using namespace System;
 
 namespace InvernaderoModel {
-
+    
     ref class Zona; // Adelanto de la declaración para evitar error de dependencia circular
 
     public ref class Tarea {
     private:
+        int id;
         String^ descripcion;
         String^ fechaLimite;
         String^ estado;
@@ -15,12 +16,15 @@ namespace InvernaderoModel {
 
     public:
         Tarea();
-        Tarea(String^ descripcion, String^ fechaLimite, String^ estado);
+        Tarea(int id, String^ descripcion, String^ fechaLimite, String^ estado);
 
         void marcarComoRealizada();
         void asignarZona(Zona^ z);
 
         // Getters y setters
+        int getId();
+        void setId(int tarea);
+
         String^ getDescripcion();
         void setDescripcion(String^ desc);
 

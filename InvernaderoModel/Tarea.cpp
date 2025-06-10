@@ -6,7 +6,8 @@ using namespace InvernaderoModel;
 Tarea::Tarea() {
 }
 
-Tarea::Tarea(String^ descripcion, String^ fechaLimite, String^ estado) {
+Tarea::Tarea(int id,String^ descripcion, String^ fechaLimite, String^ estado) {
+    this->id = id;
     this->descripcion = descripcion;
     this->fechaLimite = fechaLimite;
     this->estado = estado;
@@ -18,6 +19,12 @@ void Tarea::marcarComoRealizada() {
 
 void Tarea::asignarZona(Zona^ z) {
     this->zona = z;
+}
+int Tarea::getId() {
+    return this->id;
+}
+void Tarea::setId(int id) {
+    this->id = id;
 }
 
 String^ Tarea::getDescripcion() {
