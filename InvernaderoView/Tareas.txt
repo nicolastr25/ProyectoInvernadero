@@ -1,0 +1,5 @@
+1;Temperatura alta detectada;10/06/2026;Normal
+2;Riego automático activado;10/06/2025;Alerta
+3;Sensor de humedad desconectado;09/06/2025;Falla
+4;Ventilador encendido por calor;08/06/2025;Alerta
+5;Nivel de agua bajo en tanque;07/06/2025;Normal
