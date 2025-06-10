@@ -1,15 +1,16 @@
 #include "Tarea.h"
-#include "Zona.h"
 
 using namespace InvernaderoModel;
 
 Tarea::Tarea() {
 }
 
-Tarea::Tarea(String^ descripcion, String^ fechaLimite, String^ estado) {
+Tarea::Tarea(int codigo, String^ descripcion, String^ fechaLimite, String^ estado, Zona^ zona) {
+    this->codigo = codigo;
     this->descripcion = descripcion;
     this->fechaLimite = fechaLimite;
     this->estado = estado;
+    this->zona = zona;
 }
 
 void Tarea::marcarComoRealizada() {
@@ -18,6 +19,14 @@ void Tarea::marcarComoRealizada() {
 
 void Tarea::asignarZona(Zona^ z) {
     this->zona = z;
+}
+
+int Tarea::getCodigo() {
+    return this->codigo;
+}
+
+void Tarea::setCodigo(int codigo) {
+    this->codigo = codigo;
 }
 
 String^ Tarea::getDescripcion() {
