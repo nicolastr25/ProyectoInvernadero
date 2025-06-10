@@ -1,5 +1,5 @@
-1;Termostato;YAMAHA;ON
-2;Ventilador;HiFi;ON
+1;Termostato;YAMAHA;OFF
+2;Ventilador;HiFi;OFF
 3;Estufa;Naylamp;ON
 4;Ventilador;Sony;OFF
 5;Estufa;Cisneros S.A.;OFF
