@@ -13,8 +13,13 @@ namespace InvernaderoController {
 
 		List<Tarea^>^ buscarTodos();
 		Tarea^ buscarTareaxDescripcion(String^ descripcion);
-		void agregarTarea(String^ descripcion, String^ fechaLimite, String^ estado, Zona^ zona);
+		List<Tarea^>^ buscarListaTareaxDescripcion(String^ descripcion);
+		void agregarTarea(int id, String^ descripcion, String^ fechaLimite, String^ estado);
 		void eliminarTarea(String^ descripcionEliminar);
 		void escribirArchivo(List<Tarea^>^ listaTareas);
+		void actualizarTarea(int id, String^ descripcion, String^ fechaLimite, String^ estado);
+
+
+
 	};
 }
