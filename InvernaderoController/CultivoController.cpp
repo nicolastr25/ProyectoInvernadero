@@ -16,9 +16,9 @@ List<Cultivo^>^ CultivoController::buscarTodos() {
 		String^ nombreFile = campos[0];
 		String^ tipoFile = campos[1];
 		String^ etapaFile = campos[2];
-		float reqTempFile = Convert::ToDouble(campos[3]);
-		float reqHumFile = Convert::ToDouble(campos[4]);
-		float reqLuzFile = Convert::ToDouble(campos[5]);
+		float reqTempFile = Convert::ToSingle(campos[3]);
+		float reqHumFile = Convert::ToSingle(campos[4]);
+		float reqLuzFile = Convert::ToSingle(campos[5]);
 		Cultivo^ cultivo = gcnew Cultivo(nombreFile, tipoFile, etapaFile, reqTempFile, reqHumFile, reqLuzFile);
 		listaCultivos->Add(cultivo);
 	}
@@ -34,9 +34,9 @@ List<Cultivo^>^ CultivoController::buscarCultivoxNombre_(String^ nombre) {
 		String^ nombreFile = campos[0];
 		String^ tipoFile = campos[1];
 		String^ etapaFile = campos[2];
-		float reqTempFile = Convert::ToDouble(campos[3]);
-		float reqHumFile = Convert::ToDouble(campos[4]);
-		float reqLuzFile = Convert::ToDouble(campos[5]);
+		float reqTempFile = Convert::ToSingle(campos[3]);
+		float reqHumFile = Convert::ToSingle(campos[4]);
+		float reqLuzFile = Convert::ToSingle(campos[5]);
 		if (nombreFile->Contains(nombre)) {
 			Cultivo^ cultivo = gcnew Cultivo(nombreFile, tipoFile, etapaFile, reqTempFile, reqHumFile, reqLuzFile);
 			listaCultivos->Add(cultivo);
