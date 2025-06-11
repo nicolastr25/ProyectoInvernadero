@@ -8,6 +8,8 @@ namespace InvernaderoView {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace InvernaderoModel;
+	using namespace InvernaderoController;
 
 	/// <summary>
 	/// Resumen de frmEditarDepartamento
@@ -21,6 +23,11 @@ namespace InvernaderoView {
 			//
 			//TODO: agregar código de constructor aquí
 			//
+		}
+		frmEditarDepartamento(Departamento^ departamento)
+		{
+			InitializeComponent();
+			this->departamento = departamento;
 		}
 
 	protected:
@@ -44,6 +51,7 @@ namespace InvernaderoView {
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
+	private: Departamento^ departamento;
 
 	private:
 		/// <summary>
@@ -79,6 +87,7 @@ namespace InvernaderoView {
 			this->button2->TabIndex = 8;
 			this->button2->Text = L"Cancelar";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &frmEditarDepartamento::button2_Click);
 			// 
 			// button1
 			// 
@@ -89,6 +98,7 @@ namespace InvernaderoView {
 			this->button1->TabIndex = 7;
 			this->button1->Text = L"Grabar";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &frmEditarDepartamento::button1_Click);
 			// 
 			// groupBox1
 			// 
@@ -110,7 +120,7 @@ namespace InvernaderoView {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(53, 105);
+			this->label7->Location = System::Drawing::Point(66, 154);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(54, 16);
 			this->label7->TabIndex = 12;
@@ -144,16 +154,16 @@ namespace InvernaderoView {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(53, 155);
+			this->label2->Location = System::Drawing::Point(66, 55);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(75, 16);
+			this->label2->Size = System::Drawing::Size(54, 16);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"Codigo Ub:";
+			this->label2->Text = L"Codigo:";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(53, 55);
+			this->label1->Location = System::Drawing::Point(66, 104);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(59, 16);
 			this->label1->TabIndex = 0;
@@ -169,11 +179,29 @@ namespace InvernaderoView {
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"frmEditarDepartamento";
 			this->Text = L"frmEditarDepartamento";
+			this->Load += gcnew System::EventHandler(this, &frmEditarDepartamento::frmEditarDepartamento_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	};
+	private: System::Void frmEditarDepartamento_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->textBox1->Text = Convert::ToString(this->departamento->getCodigo());
+		this->textBox2->Text = this->departamento->getNombre();
+		this->textBox3->Text = this->departamento->getRegion();
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		int codigo = Convert::ToInt32(this->textBox1->Text);
+		String^ nombre = this->textBox2->Text;
+		String^ region = this->textBox3->Text;
+		DepartamentoController^ departamentoController = gcnew DepartamentoController();
+		departamentoController->actualizarDepartamento(codigo, nombre, region);
+		MessageBox::Show("El departamento ha sido actualizado exitosamente");
+		this->Close();
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+};
 }

@@ -1,0 +1,5 @@
+1;Lima;Costa
+2;Cusco;Sierra
+3;Loreto;Selva
+4;Arequipa;Costa
+5;Huancavelica;Sierra

@@ -1,4 +1,4 @@
-Invernadero1;Costa;zona1,zona3,zona2;jime,nico,Raúl
-Invernadero2;Selva;zona1,zona3,zona2;jime,nico,raul
-Invernadero3;Sierra;zona1,zona3,zona2;jime,nico,raul
-Invernadero4;Costa;zona1,zona3,zona2;jime,nico,raul
+Invernadero1;Costa;
+Invernadero2;Selva;
+Invernadero3;Sierra;
+Invernadero4;Costa;

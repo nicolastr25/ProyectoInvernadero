@@ -102,10 +102,10 @@ namespace InvernaderoView {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(290, 475);
-			this->button4->Margin = System::Windows::Forms::Padding(2);
+			this->button4->Location = System::Drawing::Point(324, 523);
+			this->button4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(56, 19);
+			this->button4->Size = System::Drawing::Size(75, 23);
 			this->button4->TabIndex = 17;
 			this->button4->Text = L"Eliminar";
 			this->button4->UseVisualStyleBackColor = true;
@@ -113,10 +113,10 @@ namespace InvernaderoView {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(209, 475);
-			this->button3->Margin = System::Windows::Forms::Padding(2);
+			this->button3->Location = System::Drawing::Point(216, 523);
+			this->button3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(56, 19);
+			this->button3->Size = System::Drawing::Size(75, 23);
 			this->button3->TabIndex = 16;
 			this->button3->Text = L"Editar";
 			this->button3->UseVisualStyleBackColor = true;
@@ -124,10 +124,10 @@ namespace InvernaderoView {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(126, 475);
-			this->button2->Margin = System::Windows::Forms::Padding(2);
+			this->button2->Location = System::Drawing::Point(105, 523);
+			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(56, 19);
+			this->button2->Size = System::Drawing::Size(75, 23);
 			this->button2->TabIndex = 15;
 			this->button2->Text = L"Nuevo";
 			this->button2->UseVisualStyleBackColor = true;
@@ -136,11 +136,11 @@ namespace InvernaderoView {
 			// groupBox2
 			// 
 			this->groupBox2->Controls->Add(this->dataGridView1);
-			this->groupBox2->Location = System::Drawing::Point(39, 218);
-			this->groupBox2->Margin = System::Windows::Forms::Padding(2);
+			this->groupBox2->Location = System::Drawing::Point(23, 205);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(2);
-			this->groupBox2->Size = System::Drawing::Size(413, 233);
+			this->groupBox2->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox2->Size = System::Drawing::Size(633, 287);
 			this->groupBox2->TabIndex = 14;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Resultados de Búsqueda";
@@ -152,12 +152,12 @@ namespace InvernaderoView {
 				this->Column1,
 					this->Column2
 			});
-			this->dataGridView1->Location = System::Drawing::Point(38, 30);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
+			this->dataGridView1->Location = System::Drawing::Point(60, 37);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(341, 180);
+			this->dataGridView1->Size = System::Drawing::Size(516, 222);
 			this->dataGridView1->TabIndex = 1;
 			// 
 			// Column1
@@ -181,11 +181,11 @@ namespace InvernaderoView {
 			this->groupBox1->Controls->Add(this->textBox2);
 			this->groupBox1->Controls->Add(this->label2);
 			this->groupBox1->Controls->Add(this->textBox1);
-			this->groupBox1->Location = System::Drawing::Point(39, 11);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(2);
+			this->groupBox1->Location = System::Drawing::Point(23, 11);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(2);
-			this->groupBox1->Size = System::Drawing::Size(599, 163);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox1->Size = System::Drawing::Size(633, 167);
 			this->groupBox1->TabIndex = 13;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Criterios de Búsqueda";
@@ -193,19 +193,18 @@ namespace InvernaderoView {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(329, 53);
-			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label4->Location = System::Drawing::Point(322, 68);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(58, 13);
+			this->label4->Size = System::Drawing::Size(71, 16);
 			this->label4->TabIndex = 12;
 			this->label4->Text = L"Ubicación:";
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(251, 103);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
+			this->button1->Location = System::Drawing::Point(250, 121);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(56, 19);
+			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 9;
 			this->button1->Text = L"Buscar";
 			this->button1->UseVisualStyleBackColor = true;
@@ -213,36 +212,35 @@ namespace InvernaderoView {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(407, 53);
-			this->textBox2->Margin = System::Windows::Forms::Padding(2);
+			this->textBox2->Location = System::Drawing::Point(417, 68);
+			this->textBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(128, 20);
+			this->textBox2->Size = System::Drawing::Size(169, 22);
 			this->textBox2->TabIndex = 8;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(45, 53);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(26, 68);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(47, 13);
+			this->label2->Size = System::Drawing::Size(59, 16);
 			this->label2->TabIndex = 7;
 			this->label2->Text = L"Nombre:";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(111, 53);
-			this->textBox1->Margin = System::Windows::Forms::Padding(2);
+			this->textBox1->Location = System::Drawing::Point(106, 65);
+			this->textBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(128, 20);
+			this->textBox1->Size = System::Drawing::Size(169, 22);
 			this->textBox1->TabIndex = 6;
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(533, 324);
-			this->button5->Margin = System::Windows::Forms::Padding(2);
+			this->button5->Location = System::Drawing::Point(432, 523);
+			this->button5->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(67, 19);
+			this->button5->Size = System::Drawing::Size(89, 23);
 			this->button5->TabIndex = 18;
 			this->button5->Text = L"Consultar";
 			this->button5->UseVisualStyleBackColor = true;
@@ -250,18 +248,18 @@ namespace InvernaderoView {
 			// 
 			// frmMantenimientoInvernadero
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(681, 531);
+			this->ClientSize = System::Drawing::Size(684, 566);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"frmMantenimientoInvernadero";
-			this->Text = L"frmMantenimientoInvernadero";
-			this->Load += gcnew System::EventHandler(this, &frmMantenimientoInvernadero::frmMantenimientoInvernadero_Load);
+			this->Text = L"Mantenimiento de Invernadero";
 			this->groupBox2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
@@ -288,29 +286,42 @@ namespace InvernaderoView {
 		}
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index;
-		String^ nombreEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
-		InvernaderoCController^ invernaderoController = gcnew InvernaderoCController();
-		invernaderoController->eliminarInvernadero(nombreEliminar);
-		MessageBox::Show("El Invernadero ha sido eliminado exitosamente");
-		this->dataGridView1->Rows->Clear();
+		if (this->dataGridView1->SelectedRows->Count > 0)
+		{
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index;
+			String^ nombreEliminar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+			InvernaderoCController^ invernaderoController = gcnew InvernaderoCController();
+			invernaderoController->eliminarInvernadero(nombreEliminar);
+			MessageBox::Show("El Invernadero ha sido eliminado exitosamente");
+			this->dataGridView1->Rows->Clear();
+		}
+		else
+		{
+			MessageBox::Show("Por favor, seleccione un invernadero para eliminar.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		frmNuevoInvernadero^ ventanaNuevoInvernadero = gcnew frmNuevoInvernadero();
 		ventanaNuevoInvernadero->ShowDialog();
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index;
-		String^ nombreEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
-		InvernaderoCController^ invernaderoController = gcnew InvernaderoCController();
-		Invernadero^ invernadero = invernaderoController->buscarInvernaderoxNombre(nombreEditar);
-		frmEditarInvernadero^ ventanaEditarInvernadero = gcnew frmEditarInvernadero(invernadero);
-		ventanaEditarInvernadero->ShowDialog();
-		List<Invernadero^>^ listaInvernaderos = invernaderoController->buscarTodos();
-		mostrarGrilla(listaInvernaderos);
+		if (this->dataGridView1->SelectedRows->Count > 0)
+		{
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index;
+			String^ nombreEditar = this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString();
+			InvernaderoCController^ invernaderoController = gcnew InvernaderoCController();
+			Invernadero^ invernadero = invernaderoController->buscarInvernaderoxNombre(nombreEditar);
+			frmEditarInvernadero^ ventanaEditarInvernadero = gcnew frmEditarInvernadero(invernadero);
+			ventanaEditarInvernadero->ShowDialog();
+			List<Invernadero^>^ listaInvernaderos = invernaderoController->buscarTodos();
+			mostrarGrilla(listaInvernaderos);
+		}
+		else
+		{
+			MessageBox::Show("Por favor, seleccione un invernadero para editar.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
-	private: System::Void frmMantenimientoInvernadero_Load(System::Object^ sender, System::EventArgs^ e) {
-	}
+	
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 		frmInfoInvernadero^ ventanaInfoInvernadero = gcnew frmInfoInvernadero();
 		ventanaInfoInvernadero->Show();
