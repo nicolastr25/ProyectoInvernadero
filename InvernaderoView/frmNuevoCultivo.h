@@ -149,7 +149,7 @@ namespace InvernaderoView {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Dni", L"Pasaporte", L"Carnet Extranjería" });
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Tubérculo", L"Cereal", L"Hortaliza", L"Frutal" });
 			this->comboBox1->Location = System::Drawing::Point(142, 85);
 			this->comboBox1->Margin = System::Windows::Forms::Padding(2);
 			this->comboBox1->Name = L"comboBox1";
@@ -260,9 +260,9 @@ namespace InvernaderoView {
 		String^ nombre = this->textBox1->Text;
 		String^ tipo = this->comboBox1->Text;
 		String^ etapa = this->textBox5->Text;
-		Double reqTemp = Convert::ToDouble(this->textBox2->Text);
-		Double reqHum = Convert::ToDouble(this->textBox3->Text);
-		Double reqLuz = Convert::ToDouble(this->textBox4->Text);
+		float reqTemp = Convert::ToSingle(this->textBox2->Text);
+		float reqHum = Convert::ToSingle(this->textBox3->Text);
+		float reqLuz = Convert::ToSingle(this->textBox4->Text);
 		CultivoController^ cultivoController = gcnew CultivoController();
 		cultivoController->agregarCultivo(nombre, tipo, etapa, reqTemp, reqHum, reqLuz);
 		MessageBox::Show("El cultivo se ha registrado exitosamente"); //Muestra una caja de texto con el mensaje

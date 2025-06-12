@@ -43,7 +43,7 @@ float Cultivo::getRequerimentoTemp() {
     return this->requerimientoTemp;
 }
 
-void Cultivo::setRequerimentoTemp(int requerimientoTemp) {
+void Cultivo::setRequerimentoTemp(float requerimientoTemp) {
     this->requerimientoTemp = requerimientoTemp;
 }
 
@@ -51,7 +51,7 @@ float Cultivo::getRequerimentoHumedad() {
     return this->requerimientoHumedad;
 }
 
-void Cultivo::setRequerimentoHumedad(int requerimientoHumedad) {
+void Cultivo::setRequerimentoHumedad(float requerimientoHumedad) {
     this->requerimientoHumedad = requerimientoHumedad;
 }
 
@@ -59,6 +59,6 @@ float Cultivo::getRequerimentoLuz() {
     return this->requerimientoLuz;
 }
 
-void Cultivo::setRequerimentoLuz(int requerimientoLuz) {
+void Cultivo::setRequerimentoLuz(float requerimientoLuz) {
     this->requerimientoLuz = requerimientoLuz;
 }

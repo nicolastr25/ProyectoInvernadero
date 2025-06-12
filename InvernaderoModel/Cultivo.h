@@ -24,10 +24,10 @@ namespace InvernaderoModel {
         String^ getEtapa();
         void setEtapa(String^ etapa);
         float getRequerimentoTemp();
-        void setRequerimentoTemp(int requerimentoTemp);
+        void setRequerimentoTemp(float requerimentoTemp);
         float getRequerimentoHumedad();
-        void setRequerimentoHumedad(int requerimientoHumedad);
+        void setRequerimentoHumedad(float requerimientoHumedad);
         float getRequerimentoLuz();
-        void setRequerimentoLuz(int requerimentoLuz);
+        void setRequerimentoLuz(float requerimentoLuz);
     };
 }

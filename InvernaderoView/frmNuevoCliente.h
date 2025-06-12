@@ -172,6 +172,7 @@ namespace InvernaderoView {
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(171, 24);
 			this->comboBox1->TabIndex = 10;
+	
 			// 
 			// textBox4
 			// 
@@ -270,7 +271,6 @@ namespace InvernaderoView {
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"frmNuevoCliente";
 			this->Text = L"Nuevo Cliente";
-			this->Load += gcnew System::EventHandler(this, &frmNuevoCliente::frmNuevoCliente_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
@@ -294,8 +294,6 @@ namespace InvernaderoView {
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-	private: System::Void frmNuevoCliente_Load(System::Object^ sender, System::EventArgs^ e) {
 
-	}
-	};
+};
 }

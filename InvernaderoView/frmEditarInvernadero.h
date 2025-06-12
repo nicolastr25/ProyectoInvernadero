@@ -101,10 +101,10 @@ namespace InvernaderoView {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(301, 401);
-			this->button3->Margin = System::Windows::Forms::Padding(2);
+			this->button3->Location = System::Drawing::Point(273, 384);
+			this->button3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(61, 19);
+			this->button3->Size = System::Drawing::Size(81, 23);
 			this->button3->TabIndex = 20;
 			this->button3->Text = L"Cancelar";
 			this->button3->UseVisualStyleBackColor = true;
@@ -112,10 +112,10 @@ namespace InvernaderoView {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(201, 401);
-			this->button4->Margin = System::Windows::Forms::Padding(2);
+			this->button4->Location = System::Drawing::Point(140, 384);
+			this->button4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(56, 19);
+			this->button4->Size = System::Drawing::Size(75, 23);
 			this->button4->TabIndex = 19;
 			this->button4->Text = L"Grabar";
 			this->button4->UseVisualStyleBackColor = true;
@@ -131,11 +131,11 @@ namespace InvernaderoView {
 			this->groupBox2->Controls->Add(this->label6);
 			this->groupBox2->Controls->Add(this->label7);
 			this->groupBox2->Controls->Add(this->label8);
-			this->groupBox2->Location = System::Drawing::Point(105, 101);
-			this->groupBox2->Margin = System::Windows::Forms::Padding(2);
+			this->groupBox2->Location = System::Drawing::Point(35, 40);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(2);
-			this->groupBox2->Size = System::Drawing::Size(335, 246);
+			this->groupBox2->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox2->Size = System::Drawing::Size(447, 303);
 			this->groupBox2->TabIndex = 18;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Datos del Invernadero";
@@ -144,84 +144,81 @@ namespace InvernaderoView {
 			// 
 			this->comboBox2->FormattingEnabled = true;
 			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Dni", L"Pasaporte", L"Carnet Extranjería" });
-			this->comboBox2->Location = System::Drawing::Point(142, 125);
-			this->comboBox2->Margin = System::Windows::Forms::Padding(2);
+			this->comboBox2->Location = System::Drawing::Point(189, 154);
+			this->comboBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(129, 21);
+			this->comboBox2->Size = System::Drawing::Size(171, 24);
 			this->comboBox2->TabIndex = 10;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(142, 167);
-			this->textBox2->Margin = System::Windows::Forms::Padding(2);
+			this->textBox2->Location = System::Drawing::Point(189, 206);
+			this->textBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(129, 20);
+			this->textBox2->Size = System::Drawing::Size(171, 22);
 			this->textBox2->TabIndex = 9;
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(142, 85);
-			this->textBox5->Margin = System::Windows::Forms::Padding(2);
+			this->textBox5->Location = System::Drawing::Point(189, 105);
+			this->textBox5->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(129, 20);
+			this->textBox5->Size = System::Drawing::Size(171, 22);
 			this->textBox5->TabIndex = 8;
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(142, 42);
-			this->textBox6->Margin = System::Windows::Forms::Padding(2);
+			this->textBox6->Location = System::Drawing::Point(189, 52);
+			this->textBox6->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(129, 20);
+			this->textBox6->Size = System::Drawing::Size(171, 22);
 			this->textBox6->TabIndex = 6;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(40, 169);
-			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label5->Location = System::Drawing::Point(53, 208);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(46, 13);
+			this->label5->Size = System::Drawing::Size(57, 16);
 			this->label5->TabIndex = 3;
 			this->label5->Text = L"Usuario:";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(40, 125);
-			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label6->Location = System::Drawing::Point(53, 154);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(35, 13);
+			this->label6->Size = System::Drawing::Size(41, 16);
 			this->label6->TabIndex = 2;
 			this->label6->Text = L"Zona:";
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(40, 85);
-			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label7->Location = System::Drawing::Point(53, 105);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(58, 13);
+			this->label7->Size = System::Drawing::Size(71, 16);
 			this->label7->TabIndex = 1;
 			this->label7->Text = L"Ubicacion:";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(40, 45);
-			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label8->Location = System::Drawing::Point(53, 55);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(47, 13);
+			this->label8->Size = System::Drawing::Size(59, 16);
 			this->label8->TabIndex = 0;
 			this->label8->Text = L"Nombre:";
 			// 
 			// frmEditarInvernadero
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(564, 505);
+			this->ClientSize = System::Drawing::Size(530, 447);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->groupBox2);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"frmEditarInvernadero";
 			this->Text = L"frmEditarInvernadero";
 			this->Load += gcnew System::EventHandler(this, &frmEditarInvernadero::frmEditarInvernadero_Load);

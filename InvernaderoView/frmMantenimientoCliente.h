@@ -112,14 +112,14 @@ namespace InvernaderoView {
 			this->groupBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->groupBox1->Size = System::Drawing::Size(676, 148);
+			this->groupBox1->Size = System::Drawing::Size(741, 148);
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Criterios de Búsqueda";
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(581, 59);
+			this->button1->Location = System::Drawing::Point(634, 59);
 			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
@@ -169,7 +169,7 @@ namespace InvernaderoView {
 			this->groupBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->groupBox2->Size = System::Drawing::Size(676, 299);
+			this->groupBox2->Size = System::Drawing::Size(741, 299);
 			this->groupBox2->TabIndex = 1;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Resultados de Búsqueda";
@@ -181,12 +181,12 @@ namespace InvernaderoView {
 				this->Column1,
 					this->Column2, this->Column3, this->Column4, this->Column5
 			});
-			this->dataGridView1->Location = System::Drawing::Point(47, 46);
+			this->dataGridView1->Location = System::Drawing::Point(20, 46);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(577, 222);
+			this->dataGridView1->Size = System::Drawing::Size(689, 222);
 			this->dataGridView1->TabIndex = 0;
 			// 
 			// Column1
@@ -261,7 +261,7 @@ namespace InvernaderoView {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(717, 588);
+			this->ClientSize = System::Drawing::Size(765, 588);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
@@ -306,22 +306,38 @@ namespace InvernaderoView {
 		ventanaNuevoCliente->ShowDialog();
 	}
 
-	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index;
-		int codigoEliminar = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
-		ClienteController^ clienteController = gcnew ClienteController();
-		clienteController->eliminarCliente(codigoEliminar);
-		MessageBox::Show("El cliente ha sido eliminado exitosamente");
-		this->dataGridView1->Rows->Clear();
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->dataGridView1->SelectedRows->Count > 0)
+		{
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index;
+			int codigoEditar = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
+			ClienteController^ clienteController = gcnew ClienteController();
+			Cliente^ cliente = clienteController->buscarClientexCodigo(codigoEditar);
+			frmEditarCliente^ ventanaEditarCliente = gcnew frmEditarCliente(cliente);
+			ventanaEditarCliente->ShowDialog();
+			List<Cliente^>^ listaClientes = clienteController->buscarTodos();
+			mostrarGrilla(listaClientes);
+		}
+		else
+		{
+			MessageBox::Show("Por favor, seleccione un cliente para editar.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 
-	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index;
-		int codigoEditar = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
-		ClienteController^ clienteController = gcnew ClienteController();
-		Cliente^ cliente = clienteController->buscarClientexCodigo(codigoEditar);
-		frmEditarCliente^ ventanaEditarCliente = gcnew frmEditarCliente(cliente);
-		ventanaEditarCliente->ShowDialog();
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->dataGridView1->SelectedRows->Count > 0)
+		{
+			int filaSeleccionada = this->dataGridView1->SelectedRows[0]->Index;
+			int codigoEliminar = Convert::ToInt32(this->dataGridView1->Rows[filaSeleccionada]->Cells[0]->Value->ToString());
+			ClienteController^ clienteController = gcnew ClienteController();
+			clienteController->eliminarCliente(codigoEliminar);
+			MessageBox::Show("El cliente ha sido eliminado exitosamente");
+			this->dataGridView1->Rows->Clear();
+		}
+		else
+		{
+			MessageBox::Show("Por favor, seleccione un cliente para eliminar.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 
 	};

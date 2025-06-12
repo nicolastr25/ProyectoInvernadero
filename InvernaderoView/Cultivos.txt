@@ -1,1 +1,1 @@
-papa;tuberculo;inicial;1.2;2.1;12.2
+papa;Tubérculo;inicial;2.1;2.1;12.2

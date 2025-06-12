@@ -4,13 +4,23 @@ namespace InvernaderoModel {
 
     Empresa::Empresa() {}
 
-    Empresa::Empresa(String^ nombre, String^ ruc, String^ direccionFiscal, String^ telefono, String^ email) {
+    Empresa::Empresa(int codigo, String^ nombre, String^ ruc, String^ direccionFiscal, String^ telefono, String^ email) {
+        this->codigo = codigo;
         this->nombre = nombre;
         this->ruc = ruc;
         this->direccionFiscal = direccionFiscal;
         this->telefono = telefono;
         this->email = email;
     }
+
+    int Empresa::getCodigo() {
+        return codigo;
+    }
+
+    void Empresa::setCodigo(int codigo) {
+        this->codigo = codigo;
+    }
+
 
     String^ Empresa::getNombre() {
         return nombre;

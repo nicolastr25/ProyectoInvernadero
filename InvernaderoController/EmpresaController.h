@@ -10,11 +10,13 @@ namespace InvernaderoController {
 
 	public:
 		EmpresaController();
-		List<Empresa^>^ buscarTodas();
-		Empresa^ buscarEmpresaxRUC(String^ ruc);
-		void agregarEmpresa(String^ nombre, String^ ruc, String^ direccionFiscal, String^ telefono, String^ email);
-		void eliminarEmpresa(String^ ruc);
+		List<Empresa^>^ buscarTodos();
+		Empresa^ buscarEmpresaxCodigo(int codigo);
+		List<Empresa^>^ buscarEmpresaxNombrexRuc(String^ nombre, String^ ruc);
+		void agregarEmpresa(int codigo, String^ nombre, String^ ruc, String^ direccionFiscal, String^ telefono, String^ email);
+		void eliminarEmpresa(int codigo);
 		void escribirArchivo(List<Empresa^>^ listaEmpresas);
+		void actualizarEmpresa(int codigo, String^ nombre, String^ ruc, String^ direccionFiscal, String^ telefono, String^ email);
 	};
 
 }

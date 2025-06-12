@@ -1,14 +1,13 @@
 #pragma once
+#include "Zona.h"
 
 using namespace System;
 
 namespace InvernaderoModel {
-    
-    ref class Zona; // Adelanto de la declaración para evitar error de dependencia circular
 
     public ref class Tarea {
     private:
-        int id;
+        int codigo;
         String^ descripcion;
         String^ fechaLimite;
         String^ estado;
@@ -16,17 +15,17 @@ namespace InvernaderoModel {
 
     public:
         Tarea();
-        Tarea(int id, String^ descripcion, String^ fechaLimite, String^ estado);
+        Tarea(int codigo, String^ descripcion, String^ fechaLimite, String^ estado, Zona^ zona);
 
         void marcarComoRealizada();
         void asignarZona(Zona^ z);
 
         // Getters y setters
-        int getId();
-        void setId(int tarea);
+        int getCodigo();
+        void setCodigo(int codigo);
 
         String^ getDescripcion();
-        void setDescripcion(String^ desc);
+        void setDescripcion(String^ descripcion);
 
         String^ getFechaLimite();
         void setFechaLimite(String^ fecha);

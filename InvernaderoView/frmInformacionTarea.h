@@ -12,19 +12,19 @@ namespace InvernaderoView {
 	using namespace InvernaderoController;
 
 	/// <summary>
-	/// Resumen de frmEditarTarea
+	/// Resumen de frmInformacionTarea
 	/// </summary>
-	public ref class frmEditarTarea : public System::Windows::Forms::Form
+	public ref class frmInformacionTarea : public System::Windows::Forms::Form
 	{
 	public:
-		frmEditarTarea(void)
+		frmInformacionTarea(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: agregar código de constructor aquí
 			//
 		}
-		frmEditarTarea(Tarea^ tarea)
+		frmInformacionTarea(Tarea^ tarea)
 		{
 			InitializeComponent();
 			this->tarea = tarea;
@@ -34,16 +34,16 @@ namespace InvernaderoView {
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
 		/// </summary>
-		~frmEditarTarea()
+		~frmInformacionTarea()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Label^ label3;
 	protected:
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::ComboBox^ comboBox2;
 	private: System::Windows::Forms::Label^ label4;
@@ -52,9 +52,10 @@ namespace InvernaderoView {
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Button^ button1;
 	private: Tarea^ tarea;
 
 	private:
@@ -70,8 +71,8 @@ namespace InvernaderoView {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -80,33 +81,32 @@ namespace InvernaderoView {
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// button2
+			// label3
 			// 
-			this->button2->Location = System::Drawing::Point(288, 340);
-			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(89, 23);
-			this->button2->TabIndex = 8;
-			this->button2->Text = L"Cancelar";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &frmEditarTarea::button2_Click);
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(537, 32);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(107, 16);
+			this->label3->TabIndex = 18;
+			this->label3->Text = L"Alerta de Estado";
 			// 
-			// button1
+			// panel1
 			// 
-			this->button1->Location = System::Drawing::Point(155, 340);
-			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(89, 23);
-			this->button1->TabIndex = 7;
-			this->button1->Text = L"Grabar";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &frmEditarTarea::button1_Click);
+			this->panel1->BackColor = System::Drawing::SystemColors::Window;
+			this->panel1->Location = System::Drawing::Point(541, 69);
+			this->panel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(280, 250);
+			this->panel1->TabIndex = 17;
+			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &frmInformacionTarea::panel1_Paint);
 			// 
 			// groupBox1
 			// 
@@ -117,15 +117,15 @@ namespace InvernaderoView {
 			this->groupBox1->Controls->Add(this->textBox3);
 			this->groupBox1->Controls->Add(this->textBox2);
 			this->groupBox1->Controls->Add(this->textBox1);
-			this->groupBox1->Controls->Add(this->label3);
-			this->groupBox1->Controls->Add(this->label2);
 			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->Location = System::Drawing::Point(22, 22);
+			this->groupBox1->Controls->Add(this->label2);
+			this->groupBox1->Controls->Add(this->label5);
+			this->groupBox1->Location = System::Drawing::Point(31, 32);
 			this->groupBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox1->Size = System::Drawing::Size(447, 287);
-			this->groupBox1->TabIndex = 10;
+			this->groupBox1->TabIndex = 21;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Datos de la Tarea";
 			// 
@@ -151,9 +151,9 @@ namespace InvernaderoView {
 			// 
 			// comboBox1
 			// 
+			this->comboBox1->Enabled = false;
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Alerta", L"Normal", L"Falla"
-			});
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Alerta", L"Normal", L"Falla" });
 			this->comboBox1->Location = System::Drawing::Point(185, 184);
 			this->comboBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->comboBox1->Name = L"comboBox1";
@@ -171,6 +171,7 @@ namespace InvernaderoView {
 			// 
 			// textBox3
 			// 
+			this->textBox3->Enabled = false;
 			this->textBox3->Location = System::Drawing::Point(185, 134);
 			this->textBox3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox3->Name = L"textBox3";
@@ -179,6 +180,7 @@ namespace InvernaderoView {
 			// 
 			// textBox2
 			// 
+			this->textBox2->Enabled = false;
 			this->textBox2->Location = System::Drawing::Point(185, 90);
 			this->textBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox2->Name = L"textBox2";
@@ -194,14 +196,14 @@ namespace InvernaderoView {
 			this->textBox1->Size = System::Drawing::Size(171, 22);
 			this->textBox1->TabIndex = 6;
 			// 
-			// label3
+			// label1
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(49, 233);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(41, 16);
-			this->label3->TabIndex = 2;
-			this->label3->Text = L"Zona:";
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(49, 233);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(41, 16);
+			this->label1->TabIndex = 2;
+			this->label1->Text = L"Zona:";
 			// 
 			// label2
 			// 
@@ -212,53 +214,75 @@ namespace InvernaderoView {
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Estado:";
 			// 
-			// label1
+			// label5
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(49, 90);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(82, 16);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Descripción:";
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(49, 90);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(82, 16);
+			this->label5->TabIndex = 0;
+			this->label5->Text = L"Descripción:";
 			// 
-			// frmEditarTarea
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(249, 345);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(89, 23);
+			this->button1->TabIndex = 19;
+			this->button1->Text = L"Cerrar";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &frmInformacionTarea::button1_Click);
+			// 
+			// frmInformacionTarea
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(519, 402);
+			this->ClientSize = System::Drawing::Size(872, 395);
 			this->Controls->Add(this->groupBox1);
-			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->Name = L"frmEditarTarea";
-			this->Text = L"frmEditarTarea";
-			this->Load += gcnew System::EventHandler(this, &frmEditarTarea::frmEditarTarea_Load);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->panel1);
+			this->Name = L"frmInformacionTarea";
+			this->Text = L"frmInformacionTarea";
+			this->Load += gcnew System::EventHandler(this, &frmInformacionTarea::frmInformacionTarea_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void frmEditarTarea_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void frmInformacionTarea_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->textBox1->Text = Convert::ToString(this->tarea->getCodigo());
 		this->textBox2->Text = this->tarea->getDescripcion();
 		this->textBox3->Text = this->tarea->getFechaLimite();
 		this->comboBox1->Text = this->tarea->getEstado();
+	}
 
+	private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+		Graphics^ graphics = e->Graphics;
+		int x = 40, y = 40;
+		Pen^ lapiz;
+		Brush^ brocha;
+
+		if (this->tarea->getEstado() == "Normal") {
+			lapiz = gcnew Pen(Color::Green); 
+			brocha = gcnew SolidBrush(Color::Green);
+		}
+		else if (this->tarea->getEstado() == "Alerta") {
+			lapiz = gcnew Pen(Color::Yellow); 
+			brocha = gcnew SolidBrush(Color::Yellow);
+		}
+		else {
+			lapiz = gcnew Pen(Color::Red); //Este es el lapiz para dibujar lo brazos roboticos;
+			brocha = gcnew SolidBrush(Color::Red);
+		}
+
+		graphics->FillRectangle(brocha, x, y, 130, 130);
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		int codigo = Convert::ToInt32(this->textBox1->Text);
-		String^ descripcion = this->textBox2->Text;
-		String^ fechaLimite = this->textBox3->Text;
-		String^ estado = this->comboBox1->Text;
-
-		TareaController^ tareaController = gcnew TareaController();
-		tareaController->actualizarTarea(codigo, descripcion, fechaLimite, estado, nullptr);
-		MessageBox::Show("El tarea ha sido actualizada exitosamente"); //Muestra una caja de texto con el mensaje
-		this->Close();
-	}
-
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
+		this->Close(); // Cierra el formulario actual
 	}
 
 };

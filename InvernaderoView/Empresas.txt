@@ -1,0 +1,3 @@
+1;Invernadero Los Olivos S.A.C.;20600111223;Carretera Central Km 12 Lima;012345678;contacto@losolivos.com
+2;Agrovida Invernaderos E.I.R.L.;20600111224;Av. Agraria 345 Ica;019876545;ventas@agrovida.pe
+3;GreenHouse Perú S.R.L.;20600111225;Fundo El Valle S/N Arequipa;014567891;info@greenhouseperu.com

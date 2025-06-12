@@ -6,6 +6,7 @@ namespace InvernaderoModel {
 
     public ref class Empresa {
     private:
+        int codigo;
         String^ nombre;
         String^ ruc;
         String^ direccionFiscal;
@@ -14,7 +15,11 @@ namespace InvernaderoModel {
 
     public:
         Empresa();
-        Empresa(String^ nombre, String^ ruc, String^ direccionFiscal, String^ telefono, String^ email);
+        Empresa(int codigo, String^ nombre, String^ ruc, String^ direccionFiscal, String^ telefono, String^ email);
+
+
+        int getCodigo();
+        void setCodigo(int codigo);
 
         String^ getNombre();
         void setNombre(String^ nombre);
